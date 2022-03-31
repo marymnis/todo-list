@@ -10,7 +10,7 @@ A client needs a to-do list: add tasks, remove tasks, etc., each task must have 
 
 Requirements:
 
-- Django
+- Python
 - Code in English
 - REST
 - Tests
@@ -18,6 +18,7 @@ Requirements:
 
 Nice to have:
 
+- Django
 - Deploy to Heroku
 - Docker (and docker-compose)
 
