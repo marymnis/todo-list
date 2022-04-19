@@ -14,7 +14,7 @@ Requirements:
 - Code in English
 - REST
 - Tests
-- README with instructions to run your code
+- README with instructions about how to run your code
 
 Nice to have:
 
