@@ -1,4 +1,38 @@
-<!DOCTYPE html>
-<h1>
-    Testing HTML
-</h1>
+
+{% if request.user.is_authenticated %}
+<p>{{request.user}}</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+
+<hr>
+<h1>To Do List {{color}}</h1>
+<a href="{% url 'task-create' %}">Add Task</a>
+
+<form method="GET">
+    <input type="text" name="search-area">
+    <input type="submit" value="Search">
+</form>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th></th>
+    </tr>
+    
+    {% for task in tasks %}
+    <tr>
+        <th>{{task.title}}</th>
+        
+        <th><a href="{% url 'task-update' task.id %}">Edit</a></th>
+        <th><a href="{% url 'task-delete' task.id %}">Delete</a></th>
+    </tr>
+    
+    {% empty %}
+    <h3>
+        No items in list
+    </h3>
+    
+    {% endfor %}
+</table>
